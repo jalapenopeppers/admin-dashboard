@@ -23,6 +23,11 @@ html {
   height: max(40px, 4rem);
 }
 
+.card-icon {
+  width: max(20px, 1.25rem);
+  height: max(20px, 1.25rem);
+}
+
 .profile-pic {
   width: 30px;
   height: 30px;
@@ -33,6 +38,31 @@ html {
 .profile-pic-large {
   width: 60px;
   height: 60px;
+}
+
+.normal-icon,
+.large-icon,
+.card-icon,
+.profile-pic,
+.profile-pic-large {
+  transition: 0.25s;
+}
+
+.nav-icon,
+.bell-icon,
+.card-icon:hover,
+.profile-pic:hover,
+.profile-pic-large:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.normal-icon:active,
+.large-icon:active,
+.card-icon:active,
+.profile-pic:active,
+.profile-pic-large:active {
+  scale: 0.9;
 }
 
 .layout-container {
@@ -59,6 +89,13 @@ li.list-item-grid,
   grid-template-columns: min-content 1fr;
   align-items: center;
   gap: 5px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+li.list-item-grid:active,
+.dashboard-title:active {
+  scale: 0.9;
 }
 
 .dashboard-title {
@@ -135,12 +172,13 @@ ul {
 
 .nav-bar {
   width: max(100px, 20vw);
-  height: max(12px, 1rem);
+  height: 20px;
   background-color: #cbd5e1;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .main-content {
+  padding: 20px 20px;
   background-color: #cbd5e1;
   display: grid;
   grid-template: repeat(2, 1fr) / 3fr 1fr;
@@ -150,7 +188,56 @@ ul {
   grid-row: 1 / span 2;
 }
 
+.heading {
+  font-size: max(16px, 1.25rem);
+  font-weight: bold;
+}
+
 .card-container {
+  padding-top: 15px;
+  padding-right: 20px;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  padding: 10px;
+  font-size: clamp(12px, 1.25rem, 18px);
+  background-color: #f8fafc;
+  border-radius: 10px;
+  display: grid;
+  align-content: space-between;
+  transition: 0.25s
+}
+
+.card:hover {
+  background-color: #d9dbdc;
+}
+
+.card-1,
+.card-2,
+.card-3 {
+  box-shadow: -3px 0px 0px 0px #19b002, 1px 3px 1px 1px #979ba2;
+}
+
+.card-4,
+.card-5 {
+  box-shadow: -3px 0px 0px 0px #e4c900, 1px 3px 1px 1px #979ba2;
+}
+
+.card-6 {
+  box-shadow: -3px 0px 0px 0px #e42a00, 1px 3px 1px 1px #979ba2
+}
+
+.card-actions {
+  justify-self: end;
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  gap: 10px;
+}
+
+.card-title {
+  font-size: clamp(14px, 1.3rem, 20px);
+  padding-bottom: 5px;
 }
