@@ -3,7 +3,6 @@
 * {
   margin: 0;
   padding: 0;
-  /* border: 1px solid black; */
   font-family: "Work Sans", sans-serif;
 }
 
@@ -40,6 +39,11 @@ html {
   height: 60px;
 }
 
+.trending-profile-pic {
+  width: clamp(40px, 5rem, 50px);
+  height: clamp(40px, 5rem, 50px);
+}
+
 .normal-icon,
 .large-icon,
 .card-icon,
@@ -68,7 +72,7 @@ html {
 .layout-container {
   display: grid;
   height: 100vh;
-  grid-template: 1fr 10fr / 1.5fr 6fr;
+  grid-template: 1fr 10fr / minmax(170px, 1.5fr) 6fr;
 }
 
 .sidebar {
@@ -100,6 +104,7 @@ li.list-item-grid:active,
 
 .dashboard-title {
   padding-top: 15%;
+  gap: 10px;
 }
 
 ul {
@@ -243,10 +248,10 @@ ul {
 }
 
 .announcements-container {
-  background-color: #f8fafc;
   padding: 20px;
   font-size: clamp(12px, 1.25rem, 18px);
   background-color: #f8fafc;
+  box-shadow: 1px 3px 1px 1px #979ba2;
   border-radius: 10px;
   display: grid;
   gap: 15px;
@@ -274,4 +279,22 @@ ul {
   content: "";
   width: 100%;
   display: block;
+}
+
+.trending-item-container {
+  padding: 15px;
+  font-size: clamp(12px, 1.25rem, 18px);
+  background-color: #f8fafc;
+  box-shadow: 1px 3px 1px 1px #979ba2;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.trending-item {
+  display: grid;
+  grid-template: 1fr / min-content 1fr;
+  gap: 10px;
+  align-items: center;
 }
